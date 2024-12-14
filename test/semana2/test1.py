@@ -4,8 +4,10 @@ from selenium.webdriver.common.keys import Keys
 from warnings import filterwarnings
 filterwarnings("ignore")
 import unittest
-from re import sub
 from decimal import Decimal
+import locale
+locale.setlocale(locale.LC_ALL, 'es_CO.UTF8')
+
 
 class eis_test(unittest.TestCase):
 
@@ -27,7 +29,7 @@ class eis_test(unittest.TestCase):
 					res.append(number.text)
 			
 			self.assertGreater(len(res), 0, msg='Fallo, no se encontro el precio en el resultado de -> %s' % (url))
-			self.assertGreater(Decimal(sub(r'[^\d.]', '', res[0])), 0, msg='Fallo, el precio del producto debe ser mayor a 0')
+			self.assertGreater(locale.atof(res[0]), 0, msg='Fallo, el precio del producto debe ser mayor a 0')
 
 	def tearDown(self):
 		self.browser.quit()

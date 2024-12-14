@@ -1,7 +1,8 @@
 language: python
 python:
   - "3.8"
-
+install:
+    - pip install selenium
 before_script: 
   - echo "preparando entorno para pruebas"
 
