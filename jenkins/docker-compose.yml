@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts-jdk17
+    restart: none
+    ports:
+      - "9090:8080"
+    volumes:
+      - "./jenkins_home:/var/jenkins_home"
