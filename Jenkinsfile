@@ -2,22 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Configuracion entorno') {
+        stage('Preparacion del entorno') {
+            when {
+                branch 'develop'
+            }
             steps {
-                echo 'Paso 1 desde el repo'
+                echo 'Instalando dependencias...'
+                sh 'pip install -r requirements.txt'
             }
         }
         
-         stage('Compilacion') {
-            steps {
-                echo 'Hello 2'
-                exit 1
+        stage('Ejecucion de test unitarios') {
+            when {
+                branch 'develop'
             }
-        }
-        
-          stage('Test') {
             steps {
-                echo 'Hello 3'
+                echo 'Ejecutando tests unitarios...'
+                sh 'python3 -m unittest discover ./semana3'
             }
         }
     }
