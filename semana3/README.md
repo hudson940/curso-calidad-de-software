@@ -13,3 +13,6 @@ evidencia de envio:
 ![send_email_jenkinx](https://github.com/user-attachments/assets/20a3059e-8928-4d4a-887a-ba4bd8e39705)
 
 estoy tratando de usar el sevidor smtp de outlook pero falla en jenkins por que no tiene activo el uso de STARTTLS
+
+### actividad 3
+Actividad 3- Crear un repositorio que contenga test automatizados de selenium (minimo 5, que sean elaborados, ejemplo, llenar formulario, extraer informacion) con sus respectivos test unitarios, debe estar integrado con jenkis, donde vez que haga push a la rama de desarrollo o develop solo a esa, ejecute los siguientes pasos, preparacion del entorno (instalacion de dependencias), ejecución de test unitarios, esto debe estar en un archivo de jenkis (Jenkisfile), debe mostrar el estatus de la ejecucion de los trabajos desde github, y si falla me deve enviar un correo electronico indicando que ha fallado la ejecucion. El entregable es un video corto, maximo 5 min, mostrando y explicando el flujo
